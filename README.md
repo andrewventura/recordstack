@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Recordstack
 
-Things you may want to cover:
+### What is it?
+Well, ideally, it's a way to search for and track records you want to listen to and haven't got around to yet. But not yet. It's also a way for me to get my feet wet with Rails development, soooo it's probably going to be really really rough.
 
-* Ruby version
+### Sounds pretty cool.
+Really?
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+### No.
+Oh.
