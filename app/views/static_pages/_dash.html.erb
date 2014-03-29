@@ -1,0 +1,16 @@
+<%= provide(:title, 'Dashboard') %>
+
+<h1>Dashboard</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-3">
+			<h2>Welcome, <%= current_user.username %>!</h2>
+			<br />
+			<p>Search for an item</p>
+			<%= @release %>
+		</div>
+		<div class="col-md-9">
+			<h2>Your Stacks</h2>
+		</div>
+	</div>
+</div>

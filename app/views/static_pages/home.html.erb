@@ -1,0 +1,6 @@
+<% provide(:title, 'Welcome!') %>
+<% if signed_in? %>
+	<%= render 'dash' %>
+<% else %>
+	<%= render 'intro' %>
+<% end %>
