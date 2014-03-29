@@ -1,0 +1,10 @@
+Hooray! You searched for something!<br />
+Here are the albums matching your search:<br />
+<ul>
+	<%= @results.each do |a| %>
+		<li><%= a %></li>
+	<% end %>
+
+<br />
+<br />
+<%= @mbid.each { |i| puts i } %>

@@ -1,5 +1,6 @@
 require 'rubygems'
-require 'httparty'
+require 'HTTParty'
+require 'Nokogiri'
 
 class StacksController < ApplicationController
 	include HTTParty
@@ -23,10 +24,15 @@ class StacksController < ApplicationController
 	end
 
 	def search
+		artist = Array.new
+
+		url = "http://musicbrainz.org/ws/2/release-group/"
 		lookup = params[:lookup]
-		response = HTTParty.get('release-group/', :query => {:lookup => lookup})
-		data = JSON.parse(response.body)
-		@release = data['query']['results']
+		response = HTTParty.get(url, :query => {"query" => lookup, "releasegroup" => "Sunbather"})
+		xml_data = response.body
+		doc = Nokogiri::XML(xml_data)
+		@results = doc.css('release-group > title').collect {|title| title.text.strip}
+		@mbid = doc.xpath('//@id').collect {|mbid| mbid.text.strip}
 	end
 
 end

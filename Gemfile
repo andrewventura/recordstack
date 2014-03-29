@@ -33,6 +33,9 @@ gem 'bootstrap-will_paginate'
 # httparty to party hardy
 gem 'httparty'
 
+# XML parsing
+gem 'nokogiri'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 

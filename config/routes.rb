@@ -1,4 +1,5 @@
 Recordstack::Application.routes.draw do
+  resources :albums
 
   root to: 'stacks#index'
   match '/about', to: 'static_pages#about', via: 'get'
