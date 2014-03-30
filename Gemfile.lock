@@ -142,6 +142,7 @@ DEPENDENCIES
   httparty
   jbuilder (~> 1.2)
   jquery-rails
+  json
   nokogiri
   omniauth
   rails (= 4.0.2)

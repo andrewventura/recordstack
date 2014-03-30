@@ -24,15 +24,20 @@ class StacksController < ApplicationController
 	end
 
 	def search
-		artist = Array.new
+		@resmbid = {}
 
-		url = "http://musicbrainz.org/ws/2/release-group/"
+		mburl = "http://musicbrainz.org/ws/2/release-group/" # musicbrainz url
+		caurl = "http://coverartarchive.org/release-group/" # coverartarchive url
 		lookup = params[:lookup]
-		response = HTTParty.get(url, :query => {"query" => lookup, "releasegroup" => "Sunbather"})
+		response = HTTParty.get(mburl, :query => {"query" => lookup, "releasegroup" => "Sunbather"})
 		xml_data = response.body
 		doc = Nokogiri::XML(xml_data)
 		@results = doc.css('release-group > title').collect {|title| title.text.strip}
-		@mbid = doc.xpath('//@id').collect {|mbid| mbid.text.strip}
+		@mbid = doc.xpath("//@id").collect {|mbid| mbid.text.strip}
+		@results.each_with_index do |value, index|
+			@resmbid[value] = @mbid[index]
+		end
+		@coverart = @mbid.first
 	end
 
 end

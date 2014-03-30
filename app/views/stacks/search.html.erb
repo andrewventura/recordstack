@@ -1,10 +1,29 @@
 Hooray! You searched for something!<br />
-Here are the albums matching your search:<br />
-<ul>
+<h4>Albums matching "<%= params[:lookup] %>":</h4>
+<br />
+<br />
+<br />
+<div class="search-result container">
+<!--<ul style="list-style-type: none;">
 	<%= @results.each do |a| %>
-		<li><%= a %></li>
+		<li><%= link_to a, "http://www.musicbrainz.org/release-group/", { :class => "searchresults" } %></li>
 	<% end %>
+</ul> -->
+<ul style="list-style-type: none; display: block;"`>
+	<%= @resmbid.each do |hash, key| %>
+		<li style="display: inline-block; padding: 8px 8px;" class="text-center"><%= link_to hash, "http://www.musicbrainz.org/release-group/#{key}", { :class => "searchresults" } %><br />
+			<%= link_to image_tag("http://www.coverartarchive.org/release-group/#{key}/front", size: "200x200"), "http://www.musicbrainz.org/release-group/#{key}" %>
+			<br />
+			<button class="btn text-center" style="margin: 5px 0" type="button">
+				<span class="glyphicon glyphicon-plus"></span> Add To Stack <!-- this will eventually save the album to the album model -->
+			</button>	
+		</li>
+	<% end %>
+	<br />
+	<br />
+	<br />
+	<br />
+	<hr>
+<!-- <%= link_to image_tag("http://www.coverartarchive.org/release-group/#{@mbid.first}/front", size: "250x250"), "http://www.musicbrainz.org/release-group/#{@mbid.first}" %> -->
 
-<br />
-<br />
-<%= @mbid.each { |i| puts i } %>
+</div>

@@ -1,19 +1,9 @@
 <%= provide(:title, 'Dashboard') %>
 
-<h1>Dashboard</h1>
-<div class="container">
-	<div class="row">
-		<div class="col-md-3">
-			<h2>Welcome, <%= current_user.username %>!</h2>
-			<br />
-			<%= form_tag "stacks/search" do %>
-				<label for="lookup">Search for a record</label>
-				<%= text_field_tag :lookup %>
-				<%= submit_tag "Submit" %>
-				<% end %>
-		</div>
-		<div class="col-md-9">
-			<h2>Your Stack</h2>
-		</div>
-	</div>
-</div>
+<h2>Welcome, <%= current_user.username %>!</h2>
+<br />
+	<%= form_tag "stacks/search" do %>
+		<label for="lookup">Search for a record</label>
+			<%= text_field_tag :lookup %>
+			<%= submit_tag "Submit" %>
+		<% end %>

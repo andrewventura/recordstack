@@ -33,6 +33,9 @@ gem 'bootstrap-will_paginate'
 # httparty to party hardy
 gem 'httparty'
 
+# JSON, obviously
+gem 'json'
+
 # XML parsing
 gem 'nokogiri'
 
