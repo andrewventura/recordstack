@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'HTTParty'
+# require 'HTTParty'
 require 'Nokogiri'
 
 class StacksController < ApplicationController
