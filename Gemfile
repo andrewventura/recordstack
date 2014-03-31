@@ -23,6 +23,9 @@ gem 'devise'
 # Oauth
 gem 'omniauth'
 
+# thread_safe
+gem 'thread_safe'
+
 # Bootstrap
 gem 'bootstrap-sass'
 
