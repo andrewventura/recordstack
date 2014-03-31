@@ -11,8 +11,13 @@ Hooray! You searched for something!<br />
 </ul> -->
 <ul style="list-style-type: none; display: block;"`>
 	<%= @resmbid.each do |hash, key| %>
-		<li style="display: inline-block; padding: 8px 8px;" class="text-center"><%= link_to hash, "http://www.musicbrainz.org/release-group/#{key}", { :class => "searchresults" } %><br />
+		<li style="display: inline-block; padding: 8px 8px;" class="text-center">
 			<%= link_to image_tag("http://www.coverartarchive.org/release-group/#{key}/front", size: "200x200"), "http://www.musicbrainz.org/release-group/#{key}" %>
+			<br />
+			<strong><%= link_to hash, "http://www.musicbrainz.org/release-group/#{key}", { :class => "searchresults" } %></strong>
+			<br />
+			
+			<%= link_to "#{@artist.first}", "http://www.musicbrainz.org/artist/#{key}" %>
 			<br />
 			<button class="btn text-center" style="margin: 5px 0" type="button">
 				<span class="glyphicon glyphicon-plus"></span> Add To Stack <!-- this will eventually save the album to the album model -->

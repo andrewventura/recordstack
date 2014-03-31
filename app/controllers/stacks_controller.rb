@@ -32,6 +32,7 @@ class StacksController < ApplicationController
 		response = HTTParty.get(mburl, :query => {"query" => lookup, "releasegroup" => "Sunbather"})
 		xml_data = response.body
 		doc = Nokogiri::XML(xml_data)
+		@artist = doc.css('artist-credit > name-credit > artist > name').collect {|artist| artist.text.strip}
 		@results = doc.css('release-group > title').collect {|title| title.text.strip}
 		@mbid = doc.xpath("//@id").collect {|mbid| mbid.text.strip}
 		@results.each_with_index do |value, index|
