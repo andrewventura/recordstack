@@ -3,6 +3,6 @@ class AddBioToUsers < ActiveRecord::Migration
   	add_column :users, :name, :string
   	add_column :users, :bio, :string
   	add_column :users, :favoritealbum, :string
-  	add_column :users, :location, :stringf
+  	add_column :users, :location, :string
   end
 end
