@@ -5,6 +5,8 @@ gem 'rails', '4.0.2'
 
 gem 'rails_12factor'
 
+gem 'heroku'
+
 group :development do
 	gem 'sqlite3'
 end
