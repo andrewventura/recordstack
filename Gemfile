@@ -45,7 +45,7 @@ gem 'httparty'
 gem 'json'
 
 # XML parsing
-gem 'nokogiri'
+# gem 'nokogiri'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
